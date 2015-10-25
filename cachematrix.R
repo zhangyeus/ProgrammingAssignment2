@@ -1,7 +1,15 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These two functions implement cache mecanism for 
+## inversing matrix
 
-## Write a short comment describing this function
+## Example:
+## > a<-makeCacheMatrix(rbind(c(1,-0.25), c(-0.25, 1)))
+## > cacheSolve(a)
+##          [,1]      [,2]
+## [1,] 1.0666667 0.2666667
+## [2,] 0.2666667 1.0666667
+
+## This function returns a data structure that contains
+## both the matrix (to be inversed) and four helper methods 
 
 makeCacheMatrix <- function(x = matrix()) {
 	m <- NULL
@@ -19,7 +27,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This function returns the inverse of the cache matrix.
+## If the inverse has already being computed, then it
+## directly returns the inersed matrix from cache.
+## Otherwise it computes the inverse and cache it.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
